@@ -8,7 +8,7 @@ const route = useRoute()
   <div class="page-view">
     <div class="page-container">
       <h2 class="page-title">{{ route.meta.title ?? '页面' }}</h2>
-      <p class="page-placeholder">内容建设中...hh</p>
+      <p class="page-placeholder">内容建设中...wwfhh</p>
     </div>
   </div>
 </template>
