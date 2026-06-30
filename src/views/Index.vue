@@ -26,7 +26,7 @@ const fetchCollegeNews = async () => {
     })
     collegeNewsList.value = page.records
   } catch (error) {
-    newsError.value = error instanceof Error ? error.message : '新闻加载失败'
+    newsError.value = error instanceof Error ? error.message : '新闻加载失败egfe'
   } finally {
     newsLoading.value = false
   }

@@ -21,7 +21,7 @@ on:
 jobs:
   deploy-vue:
     # 指定由打上了 vue-builder 标签的前端专用自托管 Runner 执行此任务
-    runs-on: [self-hosted, Linux, X64] 
+    runs-on: [self-hosted, Linux, X64, vue-builder]
 
     steps:
       # ========================================================
@@ -133,10 +133,10 @@ jobs:
           
               # 4. 【核心修复】先强行删除旧的影子目录/链接，防止套娃
               # 注意：如果这里以前是物理目录，这里会被删掉并转换为软链接
-              sudo rm -rf /var/www/vue-project
+              sudo rm -rf /var/www/vue-sc
           
-              # 5. 让 Nginx 配置的 root 影子路径 /var/www/vue-project 指向 current 快捷方式
-              ln -snf /app/vue-cms/current /var/www/vue-project
+              # 5. 让 Nginx 配置的 root 影子路径 /var/www/vue-sc 指向 current 快捷方式
+              ln -snf /app/vue-cms/current /var/www/vue-sc
           
               # 6. 优雅清理历史陈旧版本，默认仅保留最近 5 次成功部署的版本产物
               cd /app/vue-cms/releases && ls -t | tail -n +6 | xargs rm -rf 2>/dev/null || true
